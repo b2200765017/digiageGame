@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -14,15 +15,18 @@ public class SceneController : MonoBehaviour
         if (instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
-            DontDestroyOnLoad(gameObject);
+            Destroy(gameObject);
         }
     }
     #endregion
 
     private int index;
+    [SerializeField] private Canvas mainMenuCanvas;
+    [SerializeField] private Canvas playMenuCanvas;
 
     public void SceneChange(int value)
     {
@@ -37,6 +41,22 @@ public class SceneController : MonoBehaviour
     {
         index = SceneManager.GetActiveScene().buildIndex - 1;
         SceneManager.LoadScene(index);
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
+
+    public void PlayButton()
+    {
+        mainMenuCanvas.enabled = false;
+        playMenuCanvas.enabled = true;
+    }    
+    public void BackButton()
+    {
+        mainMenuCanvas.enabled = true;
+        playMenuCanvas.enabled = false;
     }
 
 }

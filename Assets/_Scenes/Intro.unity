@@ -788,7 +788,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Atlamak i\xE7in esc/backspace tu\u015Funa bas\u0131l\u0131 tutunuz"
+  m_text: "Oyuna ge\xE7mek i\xE7in esc/backspace tu\u015Funa bas\u0131l\u0131 tutunuz"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
