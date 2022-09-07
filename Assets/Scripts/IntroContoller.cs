@@ -25,11 +25,11 @@ public class IntroContoller : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Backspace))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Backspace))
         {
             introSkip = StartCoroutine(SkipIntro());
         }
-        if (Input.GetKeyUp(KeyCode.Escape) || Input.GetKeyUp(KeyCode.Backspace))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyUp(KeyCode.Backspace))
         {
             StopCoroutine(introSkip);
             SkipInfoText.enabled = true;

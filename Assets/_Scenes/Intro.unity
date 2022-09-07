@@ -183,8 +183,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Skipping...
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b1d9ab1c6bad56448835c83fa19fe789, type: 2}
+  m_sharedMaterial: {fileID: -6800064131980936388, guid: b1d9ab1c6bad56448835c83fa19fe789, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -788,10 +788,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Oyuna ge\xE7mek i\xE7in esc/backspace tu\u015Funa bas\u0131l\u0131 tutunuz"
+  m_text: Oyuna gecmek icin space/backspace tusuna basili tutunuz
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b1d9ab1c6bad56448835c83fa19fe789, type: 2}
+  m_sharedMaterial: {fileID: -6800064131980936388, guid: b1d9ab1c6bad56448835c83fa19fe789, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
