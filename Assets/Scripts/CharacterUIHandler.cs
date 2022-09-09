@@ -13,6 +13,7 @@ public class CharacterUIHandler : Character
 
     private new void Start()
     {
+        Initialization();
         SetHealth(characterData.Health);
         SetImage(characterData.sprite);
     }

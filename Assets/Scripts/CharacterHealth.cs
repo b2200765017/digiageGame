@@ -6,9 +6,11 @@ using UnityEngine;
 public class CharacterHealth : Character
 {
     private float health;
+    [SerializeField] private GameFinishController _gameFinish ;
     
     public new void Start()
     {
+        Initialization();
         health = characterData.Health;
     }
     public void TakeDamage()
@@ -16,10 +18,9 @@ public class CharacterHealth : Character
         health -= 1;
         if (health <= 0)
         {
-            Debug.Log("Game Is Finished!");
+            _gameFinish.Finish(gameObject.name);
         }
         GetComponent<CharacterUIHandler>().SetHealth(health);
-        Debug.Log(health);
     }
 
 }

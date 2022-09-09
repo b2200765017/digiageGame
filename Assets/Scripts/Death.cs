@@ -7,9 +7,9 @@ using Random = System.Random;
 public class Death : MonoBehaviour
 {
     [SerializeField] private Transform[] spawnPoints;
-    private void OnTriggerExit2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        other.GetComponent<CharacterHealth>().TakeDamage();
+        other.transform.GetComponent<CharacterHealth>().TakeDamage();
         StartCoroutine(Respawn(other.transform));
     }
 

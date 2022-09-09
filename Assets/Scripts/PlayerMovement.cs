@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class PlayerMovement4 : MonoBehaviour
+public class PlayerMovement : Character
 {
     [Header("For Movement")]
     [SerializeField] float moveSpeed = 10f;
@@ -38,10 +38,11 @@ public class PlayerMovement4 : MonoBehaviour
    
     
 
-    private void Start()
+    private new void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         walljumpAngle.Normalize();
+        Initialization();
        
     }
 
@@ -63,12 +64,15 @@ public class PlayerMovement4 : MonoBehaviour
 
     void Inputs()
     {
-        XDirectionalInput = Input.GetAxis("Horizontal");
-        if (Input.GetKeyDown(KeyCode.Space ))
-        {
-            if (grounded || isTouchingWall || currentJumpCount != jumpTime) canJump = true;
-        }
+        XDirectionalInput = _CharacterController.HorizontalMovement;
     }
+
+    public override void jump()
+    {
+        if (grounded || isTouchingWall || currentJumpCount != jumpTime) canJump = true;
+    }
+
+
     void CheckWorld()
     {
         grounded = Physics2D.OverlapBox(groundCheckPoint.position, groundCheckSize, 0, groundLayer);

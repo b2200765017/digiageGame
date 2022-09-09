@@ -9,7 +9,8 @@ public class CharacterSO : ScriptableObject
     public string CharacterName;
     public float Health;
     public float MovementSpeed;
-
+    
+    
     public Sprite sprite;
 
 }

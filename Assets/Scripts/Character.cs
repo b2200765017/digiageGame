@@ -2,13 +2,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using JetBrains.Annotations;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 
 public class Character : MonoBehaviour
 {
-    [SerializeField] protected CharacterSO characterData;
-    [SerializeField] public CharacterInputController _CharacterController;
+    protected CharacterSO characterData;
+    protected CharacterInputController _CharacterController;
+    protected Jump _jump;
 
     public void Start()
     {
@@ -17,6 +19,12 @@ public class Character : MonoBehaviour
 
     public void Initialization()
     {
-        characterData = (CharacterSO)Resources.Load("Character1");
+        if (gameObject.name == "Player1") characterData = DataController.instance.character1Data;
+        else characterData = DataController.instance.character2Data;
+        _CharacterController = GetComponent<CharacterInputController>();
+        _jump = GetComponent<Jump>();
+        GetComponent<SpriteRenderer>().sprite = characterData.sprite;
     }
+
+    public virtual void jump() { }
 }
