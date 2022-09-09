@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class SelectionController : MonoBehaviour
 {
+    [SerializeField] private AudioClip buttonClick;
+    [SerializeField] private AudioClip MainSceneMusic;
     public static CharacterSO character1Data;
     public static CharacterSO character2Data;
     [SerializeField] private Button readybutton1;
@@ -42,6 +44,7 @@ public class SelectionController : MonoBehaviour
                 character2Data = (CharacterSO)Resources.Load("ScriptableObjects/Player2");
             }
             DataController.instance.SetCharacterData(character1Data,character2Data);
+            SoundManager.Instance.PlayMusic(MainSceneMusic);
             SceneController.instance.NextScene();
         }
     }
@@ -60,6 +63,9 @@ public class SelectionController : MonoBehaviour
             char2left.interactable = false;
             char2right.interactable = false;
         }
+
+        PlayButtonSound();
+
     }
 
     public void CharacterSwap(Image image)
@@ -72,5 +78,13 @@ public class SelectionController : MonoBehaviour
         {
             image.sprite = Character1;
         }
+
+        PlayButtonSound();
+    }
+
+    public void PlayButtonSound()
+    {
+        SoundManager.Instance.Play(buttonClick);
+
     }
 }

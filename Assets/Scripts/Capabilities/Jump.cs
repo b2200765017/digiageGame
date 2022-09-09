@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 
-public class Jump : MonoBehaviour
+public class Jump : Character
 {
     [SerializeField, Range(0f, 10f)] private float _jumpHeight = 3f;
     [SerializeField, Range(0, 5)] private int _maxAirJumps = 0;
@@ -24,6 +24,7 @@ public class Jump : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        Initialization();
         _body = GetComponent<Rigidbody2D>();
         _ground = GetComponent<Ground>();
         _controller = GetComponent<CharacterInputController>();
@@ -40,11 +41,13 @@ public class Jump : MonoBehaviour
 
         if (_onGround)
         {
+            _animator.SetTrigger("Ground");
             _jumpPhase = 0;
         }
 
         if (_desiredJump)
         {
+            _animator.SetTrigger("Jump");
             if (_wallSlide.isWallSliding) _velocity =_wallSlide.WallJump(_velocity);
             else
             {

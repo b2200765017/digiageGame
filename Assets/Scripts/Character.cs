@@ -11,6 +11,7 @@ public class Character : MonoBehaviour
     protected CharacterSO characterData;
     protected CharacterInputController _CharacterController;
     protected Jump _jump;
+    protected Animator _animator;
 
     public void Start()
     {
@@ -23,6 +24,9 @@ public class Character : MonoBehaviour
         else characterData = DataController.instance.character2Data;
         _CharacterController = GetComponent<CharacterInputController>();
         _jump = GetComponent<Jump>();
+        _animator = GetComponent<Animator>();
+        GetComponent<SpriteRenderer>().sprite = characterData.sprite;
+        _animator.runtimeAnimatorController = characterData._animatior;
         GetComponent<SpriteRenderer>().sprite = characterData.sprite;
     }
 

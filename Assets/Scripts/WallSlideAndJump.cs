@@ -60,9 +60,11 @@ public class WallSlideAndJump : Character
         if (isTouchingWall && !_ground.OnGround && rb.velocity.y<0 )
         {
             isWallSliding = true;
+            _animator.SetTrigger("Slide");
         }
         else
         {
+            //_animator.SetTrigger("Jump");
             isWallSliding = false;
         }
         if (isWallSliding)
@@ -78,6 +80,7 @@ public class WallSlideAndJump : Character
             velocity += new Vector2(rb.velocity.x + (walljumpforce * walljumpAngle.x * walljumpDirection),
                 rb.velocity.y + (walljumpforce * walljumpAngle.y));
             Flip();
+            _animator.SetTrigger("Jump");
         }
 
         return velocity;

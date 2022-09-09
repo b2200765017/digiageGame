@@ -1,22 +1,38 @@
+using System;
 using UnityEngine;
 
-public class Ground : MonoBehaviour
+public class Ground : Character
 {
     public bool OnGround { get; private set; }
     public float Friction { get; private set; }
+    private bool start = true;
 
     private Vector2 _normal;
     private PhysicsMaterial2D _material;
+
+    private void Awake()
+    {
+        Initialization();
+    }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
         OnGround = false;
         Friction = 0;
     }
-
+    
     private void OnCollisionEnter2D(Collision2D collision)
     {
         EvaluateCollision(collision);
+        if (start)
+        {
+            start = false;
+            return;
+        }
+        if (OnGround)
+        {
+            _animator.SetTrigger("JumpExit");
+        }
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -29,7 +45,7 @@ public class Ground : MonoBehaviour
         for (int i = 0; i < collision.contactCount; i++)
         {
             _normal = collision.GetContact(i).normal;
-            OnGround |= _normal.y >= 0.9f;
+            OnGround |= _normal.y >= 0.1f;
         }
     }
 

@@ -7,7 +7,7 @@ public class CharacterHealth : Character
 {
     private float health;
     [SerializeField] private GameFinishController _gameFinish ;
-    
+    [SerializeField] private AudioClip gamewin;
     public new void Start()
     {
         Initialization();
@@ -19,6 +19,7 @@ public class CharacterHealth : Character
         if (health <= 0)
         {
             _gameFinish.Finish(gameObject.name);
+            SoundManager.Instance.Play(gamewin);
         }
         GetComponent<CharacterUIHandler>().SetHealth(health);
     }

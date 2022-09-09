@@ -871,6 +871,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1066958657}
+        m_TargetAssemblyTypeName: SelectionController, Assembly-CSharp
+        m_MethodName: PlayButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &416696652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1079,8 +1091,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5.5344, y: -7.3016}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchoredPosition: {x: 6, y: -1}
+  m_SizeDelta: {x: 82.0319, y: 190.1151}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &526794224
 MonoBehaviour:
@@ -1102,7 +1114,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1a408580bb431c34492202a9d37ec7ed, type: 3}
+  m_Sprite: {fileID: 1811782876, guid: e96f49cb7c62c004cacfbf5604ee7d2c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1155,8 +1167,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4, y: -4}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchoredPosition: {x: 1, y: 5}
+  m_SizeDelta: {x: 82.2061, y: 186.6326}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &774191198
 MonoBehaviour:
@@ -1178,7 +1190,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ea208fe3f44ee5c49932ee8476bf0ebb, type: 3}
+  m_Sprite: {fileID: -682338291, guid: 1b0ebcf4572f1904ebe0301d2567b5c6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1387,10 +1399,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ca51a51791bb204a804da429165f462, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonClick: {fileID: 8300000, guid: 2574b559f902bcd4d90d54701d1795b9, type: 3}
+  MainSceneMusic: {fileID: 8300000, guid: ea0573cb7af45e949942e49a4d4c0de8, type: 3}
   readybutton1: {fileID: 1885800912}
   readybutton2: {fileID: 17661714}
-  Character1: {fileID: 21300000, guid: 1a408580bb431c34492202a9d37ec7ed, type: 3}
-  Character2: {fileID: 21300000, guid: ea208fe3f44ee5c49932ee8476bf0ebb, type: 3}
+  Character1: {fileID: 1811782876, guid: e96f49cb7c62c004cacfbf5604ee7d2c, type: 3}
+  Character2: {fileID: -682338291, guid: 1b0ebcf4572f1904ebe0301d2567b5c6, type: 3}
   characterSelectedImage1: {fileID: 526794224}
   characterSelectedImage2: {fileID: 774191198}
   char1left: {fileID: 1636646582}

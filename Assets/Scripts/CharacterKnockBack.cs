@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class CharacterKnockBack : Character
 {
+    [SerializeField] private AudioClip punch;
     private Rigidbody2D _rb;
     private BoxCollider2D _col;
     private bool attacking = false;
@@ -24,7 +25,7 @@ public class CharacterKnockBack : Character
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.CompareTag("Player"))
-        {        
+        {
             if (attacking) col.transform.GetComponent<CharacterKnockBack>()
             .GetKnockBack(45,
                 ((col.transform.position - transform.position).normalized));
@@ -34,10 +35,13 @@ public class CharacterKnockBack : Character
 
     public IEnumerator Attack()
     {
+        SoundManager.Instance.Play(punch);
+        _animator.SetTrigger("Attack");
         attacking = true;
         _col.enabled = true;
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.2f);
         _col.enabled = false;
         attacking = false;
+        _animator.SetTrigger("AttackExit");
     }
 }

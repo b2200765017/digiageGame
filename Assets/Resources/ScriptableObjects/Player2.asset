@@ -15,4 +15,5 @@ MonoBehaviour:
   CharacterName: Doom
   Health: 4
   MovementSpeed: 15
-  sprite: {fileID: 21300000, guid: ea208fe3f44ee5c49932ee8476bf0ebb, type: 3}
+  _animatior: {fileID: 9100000, guid: 79b656351016b0d40831fda4b2f29ce2, type: 2}
+  sprite: {fileID: -682338291, guid: 1b0ebcf4572f1904ebe0301d2567b5c6, type: 3}

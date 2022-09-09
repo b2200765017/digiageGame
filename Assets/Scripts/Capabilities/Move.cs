@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Shinjingi
 {
-    public class Move : MonoBehaviour
+    public class Move : Character
     {
         [SerializeField, Range(0f, 100f)] private float _maxSpeed = 4f;
         [SerializeField, Range(0f, 100f)] private float _maxAcceleration = 35f;
@@ -18,6 +18,7 @@ namespace Shinjingi
 
         private void Awake()
         {
+            Initialization();
             _body = GetComponent<Rigidbody2D>();
             _ground = GetComponent<Ground>();
             _controller = GetComponent<CharacterInputController>();
@@ -26,6 +27,7 @@ namespace Shinjingi
         private void Update()
         {
             _direction.x = _controller.HorizontalMovement;
+            _animator.SetFloat("Speed",Mathf.Lerp(0, Mathf.Abs(_direction.x * 2f), 0.5f));
             _desiredVelocity = new Vector2(_direction.x, 0f) * Mathf.Max(_maxSpeed - _ground.Friction, 0f);
         }
 

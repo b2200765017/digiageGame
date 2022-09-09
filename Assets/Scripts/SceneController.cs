@@ -21,6 +21,8 @@ public class SceneController : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    
+
     #endregion
 
     private int index;
@@ -29,21 +31,25 @@ public class SceneController : MonoBehaviour
 
     public void SceneChange(int value)
     {
+        ButtonSound();
         SceneManager.LoadScene(value);
     }
     public void NextScene()
     {
+        ButtonSound();
         index = SceneManager.GetActiveScene().buildIndex + 1;
         SceneManager.LoadScene(index);
     }
     public void PreviousScene()
     {
+        ButtonSound();
         index = SceneManager.GetActiveScene().buildIndex - 1;
         SceneManager.LoadScene(index);
     }
 
     public void ExitGame()
     {
+        ButtonSound();
         Application.Quit();
     }
 
@@ -51,11 +57,16 @@ public class SceneController : MonoBehaviour
     {
         mainMenuCanvas.enabled = false;
         playMenuCanvas.enabled = true;
+        ButtonSound();
     }    
     public void BackButton()
     {
         mainMenuCanvas.enabled = true;
         playMenuCanvas.enabled = false;
+        ButtonSound();
     }
+    public void ButtonSound()
+    {
 
+    }
 }
